@@ -7,12 +7,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../inicio/inicio.scss">
+    <link rel="stylesheet" href="../inicio/redaccion.scss">
+
+
 
     <title>Redacción</title>
 </head>
 
 <body>
+    <div class="container-fluid titulo" align="center">
+        <p class="h1 text-primary m-4">·Redacción·</p>
+    </div>
+
+    <div class="container mb-2 border br-primary">
+        <div class="margenes m-2">
+            <div class="row ">
+                <p class="h4 text-primary mb-3">
+                    Características:
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <input class="form-control" placeholder="Palabra Clave">
+                </div>
+                <div class="col-12 col-md-4">
+                    <input class="form-control" placeholder="Palabras Clave Secundarias (separalas por comas)">
+                </div>
+                <div class="col-12 col-md-4">
+                    <select class="form-control">
+                        <option class="opciones">Post</option>
+                        <option class="opciones">Producto/ Servicio</option>
+                        <option class="opciones">Noticia</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container border br-primary">
+        <div class="margenes m-2">
+            <div class="row mt-3 mb-2">
+                <p class="h4 text-primary">
+                    Post
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <input class="form-control" placeholder="Escribe un Título para el Post">
+                </div>
+                <div class="col-12 col-md-6">
+                    <input class="form-control metadescripcion" placeholder="Escribe una descripción breve sobre el artículo que contenga al menos una vez la palabra clave principal. Valora la posibilida de añadir un símbolo al inicio de la descripción para captar la atención de los lectores cuando realizan una búsqueda en Google.">
+                </div>
+            </div>
+            <div class="row my-3 mx-1">
+
+                <div class="col-12 col-md-8">
+                    <div id="wysihtml5-toolbar" style="display: none;">
+                        <button class="btn btn-outline-primary" data-wysihtml5-command="bold">bold</button>
+                        <a data-wysihtml5-command="italic">italic</a>
+
+                        <!-- Some wysihtml5 commands require extra parameters -->
+                        <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red">red</a>
+                        <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green">green</a>
+                        <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue">blue</a>
+
+                        <!-- Some wysihtml5 commands like 'createLink' require extra paramaters specified by the user (eg. href) -->
+                        <a data-wysihtml5-command="createLink">insert link</a>
+                        <div data-wysihtml5-dialog="createLink" style="display: none;">
+                            <label>
+                                Link:
+                                <input data-wysihtml5-dialog-field="href" value="http://" class="text">
+                            </label>
+                            <a data-wysihtml5-dialog-action="save">OK</a>
+                            <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+                        </div>
+                    </div>
+                    <textarea id="wysihtml5-textarea" autofocus="" class="form-control" rows="25" style: "width: 300px;"placeholder="Aquí puedes ir escribiendo tu contenido. Revisa las recomendaciones que aparecen en el margen izquierdo para ampliar la información.">
+                            </textarea>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="button copy">
+                        <button class="btn btn-outline-primary my-3" type="button">Copiar Contenido</button>
+                    </div>
+                    <p class="h5 text-primary text-center">Consejos </p>
+                    <ul>
+                        <p>
+                            <li>
+                                <b>El título del post debe contener la palabra clave principal</b>, lo antes posible. Si es
+                                un artículo, además puede introducir el año al final. De esta manera, los usuarios y Google
+                                saben que es contenido nuevo y actualizado.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                Escribe dentro del
+                                <b>primer párrafo la palabra clave principal</b> lo antes posible
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                <b>Incluye una imagen justo después del primer párrafo</b>. La imagen debe ser de calidad y
+                                es conveniente que sea la misma con la que previsualizamos el post.
+                            </li>
+                        </p>
+                        <p>
+                            <li>
+                                Puedes incluir justo después de la imagen algunos puntos fuertes que aporten valor al contenido o si es un producto, los
+                                beneficios que aporta al cliente potencial poseer ese artículo.
+                            </li>
+                        </p>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
+
+    <script src="../EditorTexto/parser_rules/advanced.js"></script>
+    <script src="../EditorTexto/dist/wysihtml5-0.3.0.min.js"></script>
+    <script>
+        var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element
+            toolbar: "wysihtml5-toolbar", // id of toolbar element
+            parserRules: wysihtml5ParserRules // defined in parser rules set 
+        });
+    </script>
 </body>
